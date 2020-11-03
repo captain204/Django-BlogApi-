@@ -38,14 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    
+    #Third party
     'allauth',
     'allauth.account', 
     'allauth.socialaccount', 
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_swagger',
     'rest_auth', 
-    'rest_auth.registration', 
-    
+    'rest_auth.registration',
+    'drf_yasg', 
+ 
+
 
     #Local
     'post'
@@ -131,15 +136,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [ 
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication', 
     ],
 }
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 SITE_ID = 1 
